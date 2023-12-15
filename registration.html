@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/index.js"></script>
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Karma", sans-serif;
+        }
+
+        .w3-bar-block .w3-bar-item {
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 300px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container label, .form-container select, .form-container input {
+            margin-bottom: 16px;
+            width: 100%; /* Ensure full width for input fields */
+        }
+
+        .nif-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+    <script>
+        // Function to set the minimum date for Date of Birth input
+        function setMinDate() {
+            var currentDate = new Date();
+            var minDate = new Date(currentDate.getFullYear() - 16, currentDate.getMonth(), currentDate.getDate());
+            var dateString = minDate.toISOString().split('T')[0];
+            document.getElementById('dob').setAttribute('max', dateString);
+        }
+    </script>
+</head>
+<body onload="setMinDate()">
+
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16">
+        <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding"><PRINCIPAL><img src="img/g.png" alt="logo" style="width: 50%"></a> 
+    </div>
+</nav>
+
+<!-- Top menu -->
+<div class="w3-top">
+    <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+        <div class="w3-center w3-padding-16"><b>REGISTER</b></div>
+    </div>
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+    <hr id="about">
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <form class="w3-container" action="process_registration.php" method="post">
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter your name" name="name" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter your email" name="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter your password" name="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$" title="Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, one number, and one special character">
+
+
+            <label for="dob"><b>Date of Birth</b></label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="gender"><b>Gender</b></label>
+            <select name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div class="nif-label">
+                <label for="nif"><b>NIF</b></label>
+                <input type="text" pattern="\d{9}" placeholder="Identification Number" name="nif" required title="Please enter a 9-digit NIF">
+            </div>
+            <div class="address-label">
+                <label for="address"><b>Address</b></label>
+                <input type="text" placeholder="Enter your address" name="address" required>
+            </div> 
+            <button type="submit" class="w3-button w3-black w3-margin-top">Register</button>
+        </form>
+    </div>
+
+</body>
+</html>

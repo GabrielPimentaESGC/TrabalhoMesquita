@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>GenZi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/index.js"></script>
+
+  <style>
+    .w3-sidebar a {
+      font-family: "Roboto", sans-serif
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .w3-wide {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .w3-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .w3-container p {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body class="w3-content" style="max-width:1200px">
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+    <div class="w3-container w3-display-container w3-padding-16">
+      <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+      <a href="index.html" class="w3-bar-item w3-button w3-padding"><PRINCIPAL><img src="img/g.png" alt="logo" style="width: 50%"></a>
+    </div>
+    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+      <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+        New & Featured <i class="fa fa-caret-down"></i>
+      </a>
+      <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+        <a href="newshoes.html" class="w3-bar-item w3-button w3-light-grey">New Shoes</a>
+        <a href="newclothes.html" class="w3-bar-item w3-button">New Clothes</a>
+      </div>
+      <a onclick="myAccFunc1()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn2">
+        Men <i class="fa fa-caret-down"></i>
+      </a>
+      <div id="demoAcc1" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+        <a href="mensweats.html" class="w3-bar-item w3-button w3-light-grey">Sweatshirt</a>
+        <a href="mentshirts.html" class="w3-bar-item w3-button">T-Shirts</a>
+        <a href="menpants.html" class="w3-bar-item w3-button">Pants</a>
+        <a href="menshorts.html" class="w3-bar-item w3-button">Shorts</a>
+        <a href="menacessories.html" class="w3-bar-item w3-button">Acessories</a>
+      </div>
+      <a onclick="myAccFunc2()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn3">
+        Women <i class="fa fa-caret-down"></i>
+      </a>
+      <div id="demoAcc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+        <a href="womensweats.html" class="w3-bar-item w3-button w3-light-grey">Sweatshirt</a>
+        <a href="womentshirts.html" class="w3-bar-item w3-button">T-Shirts</a>
+        <a href="womenpants.html" class="w3-bar-item w3-button">Pants</a>
+        <a href="womenshorts.html" class="w3-bar-item w3-button">Shorts</a>
+        <a href="womenacessories.html" class="w3-bar-item w3-button">Acessories</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens -->
+  <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+    <div class="w3-bar-item w3-padding-24 w3-wide"><img src="img/g.png" width=50%></div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  </header>
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:250px">
+
+    <!-- Push down content on small screens -->
+    <div class="w3-hide-large" style="margin-top:83px"></div>
+
+    <!-- Top header -->
+    <header class="w3-container w3-xlarge">
+      <p class="w3-left">GenZi</p>
+      <p class="w3-right">
+        <i class="fa fa-shopping-cart w3-margin-right"></i>
+        <i class="fa fa-search"></i>
+        <button onclick="openLoginPopup()" class="w3-button w3-black">Login</button>
+      </p>
+    </header>
+
+    <!-- Image carousel -->
+    <div class="w3-content w3-display-container">
+      <!-- Slide 1 -->
+      <img class="mySlides" src="img/nike.gif" style="width:100%">
+      <!-- Slide 2 -->
+      <img class="mySlides" src="img/nike2.gif" style="width:100%">
+      <!-- Slide 3 -->
+      <img class="mySlides" src="img/nike3.gif" style="width:100%">
+
+      <!-- Optional: Add navigation buttons -->
+      <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+      <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+    </div>
+
+    <!-- Image header -->
+    <div class="w3-display-container w3-container">
+      <p><br><br><br><b>SHOPS</b></p>
+    </div>
+    <div class="w3-container w3-display-container w3-padding-16">
+      <div class="w3-col l6 s12">
+        <div class="w3-container">
+          <a href="https://www.google.com/maps/place/Gucci/@51.5113981,-0.1435767,20.03z/data=!3m1!5s0x48760529e37aae8d:0xb4b044f4154b8511!4m15!1m8!3m7!1s0x4876052caa0c2fa9:0x64126c3040d9ed14!2sBond+St,+London,+Reino+Unido!3b1!8m2!3d51.5112678!4d-0.1433897!16zL20vMDI4anNi!3m5!1s0x487604d61d9894c5:0x3ca5e0493ad7c53a!8m2!3d51.5114752!4d-0.1438244!16s%2Fg%2F1hc49d360?entry=ttu"
+            class="w3-bar-item w3-button">
+            <img src="img/londresshop.png" style="width:93%">
+            <p><b>London Shop</b><br>144-146 New Bond St, London W1S 2TR, United Kingdom</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="w3-col l6 s12">
+        <div class="w3-container">
+          <!-- Replace the href attribute with the actual link -->
+          <a href="https://www.google.com/maps/place/Massimo+Dutti/@38.7218278,-9.1474963,3a,75y,172.06h,88.89t/data=!3m6!1e1!3m4!1sepy7KARiNpIp4j7s9ckxwA!2e0!7i16384!8i8192!4m14!1m7!3m6!1s0xd1933823b37586d:0x92835d371be1789f!2sMassimo+Dutti!8m2!3d38.721652!4d-9.147556!16s%2Fg%2F1tr7f1j5!3m5!1s0xd1933823b37586d:0x92835d371be1789f!8m2!3d38.721652!4d-9.147556!16s%2Fg%2F1tr7f1j5?entry=ttu"
+            class="w3-bar-item w3-button">
+            <img src="img/lisbonshop.png" style="width:100%">
+            <p><b>Lisbon Shop</b><br>Av. da Liberdade 193, 1250-096 Lisboa</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="w3-col l6 s12">
+        <div class="w3-container">
+          <!-- Replace the src attribute with the actual image path -->
+          <a href="https://www.google.com/maps/place/Louis+Vuitton+Beverly+Hills+Rodeo+Drive/@34.0677281,-118.4015837,3a,75y,199.15h,87.08t/data=!3m7!1e1!3m5!1sryYCYgzm1H_bQNoDc7Cyhw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DryYCYgzm1H_bQNoDc7Cyhw%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D123.82395%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192!4m15!1m8!3m7!1s0x80c2bbe4659bc7ed:0xf08801746af568dc!2sRodeo+Dr,+California,+EUA!3b1!8m2!3d34.0677829!4d-118.4016273!16zL20vMDRyaGtz!3m5!1s0x80c2bbf8f588639d:0x3fdaed072829dd9f!8m2!3d34.0676146!4d-118.4016196!16s%2Fg%2F1wt3npc4?entry=ttu"
+            class="w3-bar-item w3-button">
+            <img src="img/lashop.png" style="width:100%">
+            <p><b>Los Angeles Shop</b><br>295 N Rodeo Dr, Beverly Hills, CA 90210, Estados Unidos</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="w3-col l6 s12">
+        <div class="w3-container">
+        <a href="https://www.google.com/maps/place/Louis+Vuitton/@48.871624,2.3008731,3a,75y,255.45h,90.27t/data=!3m7!1e1!3m5!1smERoALc6NnLUTja1meRklA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DmERoALc6NnLUTja1meRklA%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D134.99329%26pitch%3D0%26thumbfov%3D100!"
+        class="w3-bar-item w3-button">
+        <img src="img/parisshop.png" style="width:100%">
+        <p><b>Paris Shop</b><br>101 Av. des Champs-Élysées, 75008 Paris, France</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Login Popup -->
+<div id="loginModal" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding: 32px">
+    <div class="w3-container w3-white w3-center">
+      <span onclick="closeLoginPopup()" class="w3-button w3-transparent w3-xxlarge w3-display-topright">×</span>
+      <h2 class="w3-wide">Login</h2>
+      <!-- Add your login form or registration form here -->
+      <form style="text-align: center;">
+        <!-- Your login/registration form fields go here -->
+        <div style="margin-bottom: 16px;">
+          <label for="username" style="display: inline-block; width: 120px; text-align: right;">Email:</label>
+          <input type="text" id="username" name="username" style="width: 200px; height: 30px;" required>
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label for="password" style="display: inline-block; width: 120px; text-align: right;">Password:</label>
+          <input type="password" id="password" name="password" style="width: 200px; height: 30px;" required>
+        </div>
+        <button type="submit" class="w3-button w3-padding-large w3-red w3-margin-bottom" style="width: 200px;">Login</button>
+        <!-- Add the Register button with an onclick event -->
+        <button type="button" class="w3-button w3-padding-large w3-green w3-margin-bottom" style="width: 200px;" onclick="redirectToRegister()">Register</button>
+      </form>
+    </div>
+  </div>
+</div>
+  
+  <!-- Footer -->
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
+    <div class="w3-row-padding">
+      <div class="w3-col s4">
+        <h4>Contact</h4>
+        <p>Questions? Go ahead.</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+          <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form>
+      </div>
+
+      <div class="w3-col s4">
+        <h4>About</h4>
+        <p><a href="#">About us</a></p>
+        <p><a href="#">We're hiring</a></p>
+        <p><a href="#">Support</a></p>
+        <p><a href="#">Find store</a></p>
+        <p><a href="#">Shipment</a></p>
+        <p><a href="#">Payment</a></p>
+        <p><a href="#">Gift card</a></p>
+        <p><a href="#">Return</a></p>
+        <p><a href="#">Help</a></p>
+      </div>
+
+      <div class="w3-col s4 w3-justify">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> GenZi</p>
+        <p><i class="fa fa-fw fa-envelope"></i> genzi@gmail.com</p>
+        <h4>We accept</h4>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
+      </div>
+    </div>
+  </footer>
+
+  <div class="w3-black w3-center w3-padding-24"></div>
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function myAccFunc1() {
+  var x = document.getElementById("demoAcc1");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function myAccFunc2() {
+  var x = document.getElementById("demoAcc2");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+document.getElementById("myBtn2").click();
+document.getElementById("myBtn3").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+<script>
+  // ... (your existing scripts)
+  
+  // Function to open the login modal
+  function openLoginPopup() {
+    document.getElementById('loginModal').style.display = 'block';
+  }
+  </script>
+  
+  <script>
+    // Function to close the login popup
+    function closeLoginPopup() {
+      document.getElementById('loginModal').style.display = 'none';
+    }
+  
+    // Function to redirect to the registration page
+    function redirectToRegister() {
+      // Replace 'registration.html' with the actual URL of your registration page
+      window.location.href = 'registration.html';
+    }
+  </script>
+  
+  <script>
+    // JavaScript functions for the image carousel
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = x.length }
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex - 1].style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
